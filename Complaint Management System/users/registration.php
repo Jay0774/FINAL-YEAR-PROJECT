@@ -7,8 +7,12 @@ if(isset($_POST['submit']))
 	$email=$_POST['email'];
 	$password=md5($_POST['password']);
 	$contactno=$_POST['contactno'];
+	$adharno = $_POST['adhar'];
+	$year = $_POST['year'];
+	$adhfile=$_FILES["adhfile"]["name"];
+	move_uploaded_file($_FILES["adhfile"]["tmp_name"],"adharids/".$_FILES["adhfile"]["name"]);
 	$status=1;
-	$query=mysqli_query($bd, "insert into users(fullName,userEmail,password,contactNo,status) values('$fullname','$email','$password','$contactno','$status')");
+	$query=mysqli_query($bd, "INSERT INTO `users`(`fullName`, `userEmail`, `password`, `contactNo`,`adharno`, `AdharFile`, `status`,`year`) values('$fullname','$email','$password','$contactno','$adharno','$adhfile','$status',$year)");
 	$msg="Registration successfull. Now You can login !";
 	
 }
@@ -46,10 +50,45 @@ error:function (){}
   </head>
 
   <body>
+  	<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/our-team.php">OUR TEAM</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/registration.php">REGISTRATION</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/">LOGIN</a>
+                    </li>                 
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
+                    </li>
+                </div> 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" method="post">
+		      <form class="form-login" method="post" enctype="multipart/form-data">
 		        <h2 class="form-login-heading">User Registration</h2>
 		        <p style="padding-left: 1%; color: green">
 		        	<?php if($msg){
@@ -67,7 +106,12 @@ echo htmlentities($msg);
 		            <input type="password" class="form-control" placeholder="Password" required="required" name="password"><br >
 		             <input type="text" class="form-control" maxlength="10" name="contactno" placeholder="Contact no" required="required" autofocus>
 		            <br>
-		            
+		            <input type="text" class="form-control" maxlength="12" name="adhar" placeholder="Adhar Number" required="required" autofocus>
+		            <br>
+		            <input type="text" class="form-control" maxlength="12" name="year" placeholder="Year of enrollment" required="required" autofocus>
+		            <br>
+		            <input type="file" name="adhfile" class="form-control" value="">
+		            <br>
 		            <button class="btn btn-theme btn-block"  type="submit" name="submit" id="submit"><i class="fa fa-user"></i> Register</button>
 		            <hr>
 		            

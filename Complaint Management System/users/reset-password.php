@@ -16,6 +16,42 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   </head>
     <body>
+        <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/our-team.php">OUR TEAM</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/registration.php">REGISTRATION</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/">LOGIN</a>
+                    </li>                 
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
+                    </li>
+                </div> 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
   <div id="login-page">
 	  	<div class="container">
 	  	<!-- <h1>Hello</h1> -->
@@ -81,7 +117,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("assets/img/login-bg.jpg", {speed: 500});
+        $.backstretch("assets/img/c3.jpg", {speed: 500});
     </script>
 
 

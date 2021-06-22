@@ -12,7 +12,7 @@ else{
 function f2()
 {
 window.close();
-}ser
+}
 function f3()
 {
 window.print(); 
@@ -146,6 +146,21 @@ while($row=mysqli_fetch_array($ret1))
         <tr height="50">
       <td><b>Pincode:</b></td>
       <td><?php echo htmlentities($row['pincode']); ?></td>
+    </tr> 
+
+    <tr height="50">
+      <td><b>Year of Enrollment:</b></td>
+      <td><?php echo htmlentities($row['year']); ?></td>
+    </tr> 
+
+    <tr height="50">
+      <td><b>Adhar Number:</b></td>
+      <td><?php echo htmlentities($row['adharno']); ?></td>
+    </tr> 
+
+    <tr height="50">
+      <td><b>Adhar Id:</b></td>
+      <td><a href="http://localhost/Complaint Management System/users/adharids/<?php echo htmlentities($row['AdharFile']);?>"> View File</a></td>
     </tr>  
 
 

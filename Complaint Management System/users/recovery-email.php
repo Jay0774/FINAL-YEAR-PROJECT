@@ -85,11 +85,47 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/our-team.php">OUR TEAM</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/registration.php">REGISTRATION</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Complaint Management System/users/">LOGIN</a>
+                    </li>                 
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
+                    </li>
+                </div> 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
 <div id="login-page">
 	  	<div class="container">
 		      <form class="form-login" name="recovery" method="post">
 		        <h2 class="form-login-heading">Reset Your Password</h2>
-		        <p style="padding-left:4%; padding-top:2%;  color:red">
+		        <p style="padding-left:5%; padding-top:2%;  color:red">
 		        		<p style="padding-left:4%; padding-top:2%;  color:green">
 		        <div class="recovery-wrap">
 		            <input type="text" class="form-control" name="email" placeholder="Email"  required autofocus>

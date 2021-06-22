@@ -15,7 +15,6 @@
 			  	<a class="brand" href="http://localhost/Complaint Management System/users/our-team.php">
 			  		CMS | OUR TEAM
 			  	</a>
-				
 				<a class="brand" href="http://localhost/Complaint Management System/" style="position: absolute;right: 40px;">
 			  		Back to Portal
 			  	</a>

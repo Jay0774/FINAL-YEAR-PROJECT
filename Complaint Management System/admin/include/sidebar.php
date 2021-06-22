@@ -57,6 +57,12 @@ $num1 = mysqli_num_rows($rt);
 									Manage users
 								</a>
 							</li>
+							<li>
+								<a href="delete-user.php">
+									<i class="menu-icon icon-group"></i>
+									Delete users
+								</a>
+							</li>
 						</ul>
 
 
