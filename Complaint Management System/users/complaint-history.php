@@ -53,11 +53,11 @@ else{
                             <table class="table table-bordered table-striped table-condensed">
                               <thead>
                               <tr>
-                                  <td align="center"><b>Complaint Number</b></td>
-                                  <td align="center"><b>Reg Date</b></td>
-                                  <td align="center"><b>last Updation date</b></td>
-                                  <td align="center"><b>Status</b></td>
-                                  <td align="center"><b>Action<</td>
+                                  <th>Complaint Number</th>
+                                  <th>Reg Date</th>
+                                  <th>last Updation date</th>
+                                  <th >Status</th>
+                                  <th>Action</th>
                                   
                               </tr>
                               </thead>
@@ -79,11 +79,11 @@ while($row=mysqli_fetch_array($query))
                                       <button type="button" class="btn btn-theme04">Not Process Yet</button>
                                    <?php }
  if($status=="in process"){ ?>
-<button type="button" class="btn btn-warning">In Process  </button>
+<button type="button" class="btn btn-warning">In Process</button>
 <?php }
 if($status=="closed") {
 ?>
-<button type="button" class="btn btn-success">Complaint Closed</button>
+<button type="button" class="btn btn-success">Closed</button>
 <?php } ?>
                                    <td align="center">
                                    <a href="complaint-details.php?cid=<?php echo htmlentities($row['complaintNumber']);?>">

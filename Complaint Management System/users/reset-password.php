@@ -65,7 +65,7 @@
                     if(ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false){
                         ?>
 
-                            <form action="includes/reset-password.php" class="form-login" method="post">
+                            <form action="resetpassword.php" class="form-login" method="post">
 		                    <h2 class="form-login-heading">Password Recovery</h2>
 		                    <p style="padding-left: 1%; color: green">
 		                    </p>
@@ -85,25 +85,6 @@
                     }
                 }
             ?>
-              
-              <!-- <form class="form-login" method="post">
-		        <h2 class="form-login-heading">Password Recovery</h2>
-		        <p style="padding-left: 1%; color: green">
-		        	
-		        </p>
-		        <div class="login-wrap">
-		            <input type="password" class="form-control" placeholder="New Password" required="required" name="password">
-                    <br>
-                    <input type="password" class="form-control" placeholder="Confirm Password" required="required" name="confirm-password">
-		            <br>
-		            <button class="btn btn-theme btn-block"  type="submit" name="submit" id="submit"><i class="fa fa-user"></i> Update Password</button>
-		            <hr>
-		
-		        </div>
-		
-		      
-		
-		      </form>	  	 -->
 	  	
 	  	</div>
 	  </div>

@@ -12,8 +12,9 @@ if(isset($_POST['submit']))
 	$adhfile=$_FILES["adhfile"]["name"];
 	move_uploaded_file($_FILES["adhfile"]["tmp_name"],"adharids/".$_FILES["adhfile"]["name"]);
 	$status=1;
-	$query=mysqli_query($bd, "INSERT INTO `users`(`fullName`, `userEmail`, `password`, `contactNo`,`adharno`, `AdharFile`, `status`,`year`) values('$fullname','$email','$password','$contactno','$adharno','$adhfile','$status',$year)");
-	$msg="Registration successfull. Now You can login !";
+    $userStatus=0;
+	$query=mysqli_query($bd, "INSERT INTO `users`(`fullName`, `userEmail`, `password`, `contactNo`,`adharno`, `AdharFile`, `status`,`year`,`userStatus`) values('$fullname','$email','$password','$contactno','$adharno','$adhfile','$status',$year,$userStatus)");
+	$msg="Registration successfull.Your account needs to be activated by SWO Officer. Wait for the activation mail!";
 	
 }
 ?>
@@ -92,8 +93,8 @@ error:function (){}
 		        <h2 class="form-login-heading">User Registration</h2>
 		        <p style="padding-left: 1%; color: green">
 		        	<?php if($msg){
-echo htmlentities($msg);
-		        		}?>
+						echo htmlentities($msg);
+		        	}?>
 
 
 		        </p>

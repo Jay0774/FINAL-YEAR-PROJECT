@@ -5,7 +5,7 @@
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="change-password.php">
+			  	<a class="brand" href="index.html">
 			  		CMS | Admin
 			  	</a>
 

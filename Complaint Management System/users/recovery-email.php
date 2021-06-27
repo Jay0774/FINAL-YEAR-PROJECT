@@ -56,6 +56,7 @@
         $to = $userEmail;
         $subject = 'Reset your password for CMS';
         $message = '<p> We received a password reset request. The link to reset your password is given below. If you did not make this request you can ignore this email</p>
+        <p> The Link is only valid for 30 minutes.</p>
         <p>Here is your Password Reset Link: </br>
         <a href = "' . $url . '">' . $url . '</a></p>';
 
