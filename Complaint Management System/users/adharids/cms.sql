@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 03:42 PM
+-- Generation Time: Jun 27, 2021 at 08:17 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -40,6 +40,21 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '08-05-2020 07:23:45 PM');
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `pannelist`
+--
+
+CREATE TABLE `pannelist` (
+  `id` int(11) NOT NULL,
+  `username` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `updationDate` varchar(255) NOT NULL,
+  `college` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 -- --------------------------------------------------------
 
@@ -226,9 +241,8 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`,
 (27, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-14 04:23:54', '14-06-2021 09:54:10 AM', 1),
 (28, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-14 04:24:22', '14-06-2021 09:54:29 AM', 1),
 (29, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-14 04:57:02', '14-06-2021 10:35:54 AM', 1),
-(30, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-18 08:07:03', '', 1);
-
-
+(30, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-18 08:07:03', '', 1),
+(31, 6, 'kken37490@gmail.com', 0x3a3a3100000000000000000000000000, '2021-06-26 12:43:50', '26-06-2021 06:14:11 PM', 1);
 -- --------------------------------------------------------
 
 --
@@ -251,7 +265,8 @@ CREATE TABLE `users` (
   `adharno` bigint(12) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
   `AdharFile` varchar(255) DEFAULT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL,
+  `userStatus` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -262,6 +277,9 @@ INSERT INTO `users` (`id`, `fullName`, `userEmail`, `password`, `contactNo`, `ad
 (2, 'John', 'john@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1234567890, NULL, NULL, NULL, NULL, NULL, '2021-06-03 12:58:44', '0000-00-00 00:00:00', 1),
 (6, 'Jayesh Budhwani', 'kken37490@gmail.com', '83b4ef5ae4bb360c96628aecda974200', 123456, NULL, NULL, NULL, NULL, NULL, '2021-06-13 13:35:59', '2021-06-13 14:02:09', 1);
 
+--
+-- Indexes for dumped tables
+--
 --
 -- Indexes for dumped tables
 --
@@ -364,8 +382,10 @@ ALTER TABLE `tblcomplaints`
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
+
+ALTER TABLE `users` CHANGE `id` `id` INT(16) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

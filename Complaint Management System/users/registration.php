@@ -33,7 +33,8 @@ if(isset($_POST['submit']))
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-    	<script>
+<script>
+
 function userAvailability() {
 $("#loaderIcon").show();
 jQuery.ajax({
@@ -46,6 +47,38 @@ $("#loaderIcon").hide();
 },
 error:function (){}
 });
+}
+
+function AadharValidate() {
+        var aadhar = document.getElementById("adhar").value;
+        var adharcardTwelveDigit = /^\d{12}$/;
+        var adharSixteenDigit = /^\d{16}$/;
+        if (aadhar != '') {
+            if (aadhar.match(adharcardTwelveDigit)) {
+                return true;
+            }
+            else if (aadhar.match(adharSixteenDigit)) {
+                return true;
+            }
+            else {
+                alert("Enter valid Aadhar Number");
+                return false;
+            }
+        }
+    }
+function phonenumber()
+{
+var inputtxt = document.getElementById("num").value;
+var phoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+if (inputtxt.match(phoneno))        
+{      
+	return true;
+}
+else
+{
+    alert("Enter Vaild Phone Number");
+    return false;
+}
 }
 </script>
   </head>
@@ -62,7 +95,7 @@ error:function (){}
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+                <a class="navbar-brand" href="#">HOME </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -78,6 +111,9 @@ error:function (){}
                     </li>                 
                     <li style="float: right;">
                         <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
+                    </li>
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/pannelist/">PANNELIST</a>
                     </li>
                 </div> 
                 </ul>
@@ -105,13 +141,13 @@ error:function (){}
 		             <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" required="required" name="password"><br >
-		             <input type="text" class="form-control" maxlength="10" name="contactno" placeholder="Contact no" required="required" autofocus>
+		             <input type="text" class="form-control" id="num" maxlength="10" name="contactno" placeholder="Contact no" required="required" autofocus onblur="phonenumber();">
 		            <br>
-		            <input type="text" class="form-control" maxlength="12" name="adhar" placeholder="Adhar Number" required="required" autofocus>
+		            <input type="text" class="form-control" maxlength="12" id="adhar" name="adhar" placeholder="Adhar Number" required="required" autofocus onblur="AadharValidate();">
 		            <br>
 		            <input type="text" class="form-control" maxlength="12" name="year" placeholder="Year of enrollment" required="required" autofocus>
 		            <br>
-		            <input type="file" name="adhfile" class="form-control" value="">
+		            <input type="file" name="adhfile" class="form-control" value="" required="required" accept="pdf">
 		            <br>
 		            <button class="btn btn-theme btn-block"  type="submit" name="submit" id="submit"><i class="fa fa-user"></i> Register</button>
 		            <hr>

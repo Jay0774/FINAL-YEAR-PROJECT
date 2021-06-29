@@ -17,6 +17,7 @@
   </head>
     <body>
         <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+                <a class="navbar-brand" href="#">HOME </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -43,6 +44,9 @@
                     </li>                 
                     <li style="float: right;">
                         <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
+                    </li>
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/pannelist/">PANNELIST</a>
                     </li>
                 </div> 
                 </ul>

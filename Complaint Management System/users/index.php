@@ -83,7 +83,7 @@ return true;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost/Complaint Management System/">HOME </a>
+                <a class="navbar-brand" href="#">HOME </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -100,6 +100,9 @@ return true;
                     <li style="float: right;">
                         <a href="http://localhost/Complaint Management System/admin/">ADMIN</a>
                     </li>
+                    <li style="float: right;">
+                        <a href="http://localhost/Complaint Management System/pannelist/">PANNELIST</a>
+                    </li>
                 </div> 
                 </ul>
             </div>
@@ -107,7 +110,6 @@ return true;
         </div>
         <!-- /.container -->
     </nav>
-
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->

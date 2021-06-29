@@ -9,7 +9,11 @@ header('location:index.php');
 else{
 date_default_timezone_set('Asia/Kolkata');// change according timezone
 $currentTime = date( 'd-m-Y h:i:s A', time () );
-
+if(isset($_GET['del']))
+		  {
+		          mysqli_query($bd, "delete from users where id = '".$_GET['id']."'");
+                  $_SESSION['delmsg']="User Deleted !!";
+		  }
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +59,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 {?>
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Oh snap!</strong> 	<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
+									<strong>Done!</strong> 	<?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
 									</div>
 <?php } ?>
 
@@ -66,7 +70,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									<thead>
 										<tr>
 											<th>#</th>
-											<th> Name</th>
+											<th>Name</th>
 											<th>Email </th>
 											<th>Contact no</th>
 											<th>Reg. Date </th>
@@ -90,8 +94,7 @@ while($row=mysqli_fetch_array($query))
 <td><a href="javascript:void(0);" onClick="popUpWindow('http://localhost/Complaint Management System/admin/userprofile.php?uid=<?php echo htmlentities($row['id']);?>');" title="Update order">
 <button type="button" class="btn btn-primary">View Details</button></a></td>
 <td>
-<button type="button" class="btn btn-primary" onClick="popUpWindow('http://localhost/Complaint Management System/admin/deleteuser.php?uid=<?php echo htmlentities($row['id']);?>');">Delete User
-</button>
+<a href="delete-user.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"><i class="icon-remove-sign"></i></a>
 </td>
 <?php $cnt=$cnt+1; } ?>										
 </table>

@@ -66,9 +66,7 @@
 			<li>
 				<a href="manage-users.php"><i class="menu-icon icon-group"></i>Manage users</a>
 			</li>
-			<li>
-				<a href="new-users.php"><i class="menu-icon icon-group"></i>New Users</a>
-			</li>
+			
 			<li>
 				<a href="delete-user.php"><i class="menu-icon icon-group"></i>Delete users</a>
 			</li>
