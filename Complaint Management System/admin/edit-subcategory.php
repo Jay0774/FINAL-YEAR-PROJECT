@@ -27,7 +27,7 @@ $_SESSION['msg']="Category Updated !!";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin| Edit SubCategory</title>
+	<title>Admin| Edit Category</title>
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -46,7 +46,7 @@ $_SESSION['msg']="Category Updated !!";
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Edit SubCategory</h3>
+								<h3>Edit Category</h3>
 							</div>
 							<div class="module-body">
 
@@ -70,7 +70,7 @@ while($row=mysqli_fetch_array($query))
 ?>		
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Category</label>
+<label class="control-label" for="basicinput">College</label>
 <div class="controls">
 <select name="category" class="span8 tip" required>
 <option value="<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($catname=$row['categoryName']);?></option>

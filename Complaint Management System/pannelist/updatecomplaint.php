@@ -8,18 +8,31 @@ header('location:index.php');
 else {
   if(isset($_POST['update']))
   {
-$complaintnumber=$_GET['cid'];
-$status=$_POST['status'];
-$remark=$_POST['remark'];
-$query=mysqli_query($bd, "insert into complaintremark(complaintNumber,status,remark) values('$complaintnumber','$status','$remark')");
-$sql=mysqli_query($bd, "update tblcomplaints set status='$status' where complaintNumber='$complaintnumber'");
-
-echo "<script>alert('Complaint details updated successfully');</script>";
-
-
+  $complaintnumber=$_GET['cid'];
+  $status=$_POST['status'];
+  $remark=$_POST['remark'];
+  $query=mysqli_query($bd, "insert into complaintremark(complaintNumber,status,remark) values('$complaintnumber','$status','$remark')");
+  $sql=mysqli_query($bd, "update tblcomplaints set status='$status' where complaintNumber='$complaintnumber'");
+  echo "<script>alert('Complaint details updated successfully');</script>";
+  $s = mysqli_query($bd, "select userEmail from `users` WHERE id = (SELECT userId from `tblcomplaints` where complaintNumber = '$complaintnumber')");
+  $r=mysqli_fetch_array($s);
+  $to = $r['userEmail'];
+  $subject = "Status Updated on Complaint Number $complaintnumber";
+  $message = "<p> The status of the complaint number <b>$complaintnumber</b>, has been updated to <b>
+  $status</b>, with remarks <b>$remark</b>.
+  You can check more by logging into your account.
+  </p>";
+  $headers = "From: Final Year Project \r\n";
+  $headers .= "Content-type: text/html\r\n";
+  if(mail($to, $subject, $message, $headers)) {
+  echo "<script>alert('Updation Details mailed to user.'); window.close();
+    </script>";
+  } else {
+   echo "<script>alert('E-mail Sending Failed')</script>";
+  }
   }
 
- ?>
+?>
 <script language="javascript" type="text/javascript">
 function f2()
 {
