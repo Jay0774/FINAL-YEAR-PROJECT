@@ -12,6 +12,18 @@
     <title>Grievance Management System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/half-slider.css" rel="stylesheet">
+<script language="javascript" type="text/javascript">
+    var popUpWin=0;
+    function popUpWindow(URLStr, left, top, width, height)
+    {
+     if(popUpWin)
+    {
+    if(!popUpWin.closed) popUpWin.close();
+    }
+    popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+800+',height='+600+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+    }
+
+</script>
 </head>
 
 <body>
@@ -135,21 +147,21 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-6 col-md-3">
-              <h6>Important Links</h6>
+              <h6>Important References</h6>
               <ul class="footer-links">
-                <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                <li><a href="https://www.php.net/">PHP</a></li>
+                <li><a href="https://www.mysql.com/">MYSQL</a></li>
               </ul>
             </div>
   
             <div class="col-xs-6 col-md-3">
               <h6>Quick Links</h6>
               <ul class="footer-links">
-                <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                <li><a href="https://www.ctae.ac.in/">ABOUT CTAE</a></li>
+                <li><a href="javascript:void(0);" onClick="popUpWindow('http://localhost/Complaint Management System/map.html');" title="map">
+                    SITEMAP</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_XS7auLaBVib0qaEgrEotD1FNGbGkFfxISw1w0_Lcopulw/viewform?usp=sf_link" title="feedback">
+                    FEEDBACK</a></li>
               </ul>
             </div>
           </div>
@@ -167,15 +179,17 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <b style="color:white;">Contact Us :</b>
                 <p style="color:white;">
-                Maharana Pratap University
-                of Agricluture & Technology,
+                College of Technology
+                and Engineering,
                 Udaipur(Rajasthan) 313001
-                
-                Tel.No. 0294-2471302 (o)
-                Fax No. 0294-2471302
-                
-                Email: registrar@mpuat.ac.in
-                Web: www.mpuat.ac.in</p>
+                <br>
+                Tel.No. +91 294 2470837 (o)
+                <br>
+                Fax No. +91 294 2471056
+                <br>
+                Email:  deanctae@mpuat.ac.in
+                ctaedean@gmail.com
+                </p>
             </div>
           </div>
         </div>
