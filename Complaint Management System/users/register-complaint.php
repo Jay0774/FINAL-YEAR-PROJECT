@@ -28,6 +28,30 @@ if(isset($_POST['submit']))
 	}
 	$complainno=$cmpn;
 	echo '<script> alert("Your complain has been successfully filled and your complaintno is  "+"'.$complainno.'")</script>';
+
+	  $s = mysqli_query($bd, "select userEmail from `users` WHERE id = (SELECT userId from `tblcomplaints` where complaintNumber = '$complainno')");
+	  $r=mysqli_fetch_array($s);
+	  $to = $r['userEmail'];
+	  $subject = "Complaint Number $complainno";
+	  $message = "
+	  <p>
+	  Your Compaint Number <b>$complainno</b> has been registered sucessfully, we will get to you as soon as possible with a solution to your complain/query.
+	  <br>
+	  In Case of any Query related to your grievance, Please send us a mail at <b>webmastercmsctae@gmail.com</b> with your complaint number as reference number. We will get in touch with you in 2-3 working days. 
+	  <br>
+	  <b>CMS CTAE</b>
+	  </p>
+
+	  ";
+	  $headers = "From: Final Year Project \r\n";
+	  $headers .= "Content-type: text/html\r\n";
+	  if(mail($to, $subject, $message, $headers)) {
+	  echo "<script>alert('Check your mail for Conformation.'); window.close();
+	    </script>";
+	  } else {
+	   echo "<script>alert('E-mail Sending Failed')</script>";
+	  }
+
 }
 ?>
 

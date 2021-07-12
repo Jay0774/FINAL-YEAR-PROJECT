@@ -89,7 +89,7 @@ if($cfile=="" || $cfile=="NULL")
   echo htmlentities("File NA");
 }
 else{ ?>
-<a href="complaintdocs/<?php echo htmlentities($row['complaintFile']);?>"> View File</a>
+<a href="http://localhost/Complaint Management System/users/complaintdocs/<?php echo htmlentities($row['complaintFile']);?>"> View File</a>
 <?php } ?>
 
               </p>

@@ -10,7 +10,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             
-            <a href="D:/xampp/htdocs/Complaint Management System/index.html" class="logo"><b>Complaint Management System</b></a>
+            <a href="http://localhost/Complaint Management System/index.html" class="logo"><b>Complaint Management System</b></a>
                 
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">

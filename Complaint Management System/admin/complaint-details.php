@@ -66,7 +66,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<td><b>Complaint Number</b></td>
 											<td><?php echo htmlentities($row['complaintNumber']);?></td>
-											<td><b>Complainant Name</b></td>
+											<td><b>User Name</b></td>
 											<td> <?php echo htmlentities($row['name']);?></td>
 											<td><b>Reg Date</b></td>
 											<td><?php echo htmlentities($row['regDate']);?>
@@ -106,7 +106,7 @@ if($cfile=="" || $cfile=="NULL")
   echo "File NA";
 }
 else{?>
-<a href="complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" ?> View File</a>
+<a href="http://localhost/Complaint Management System/users/complaintdocs/<?php echo htmlentities($row['complaintFile']);?>" ?> View File</a>
 <?php } ?></td>
 </tr>
 <?php $ret=mysqli_query($bd, "select complaintremark.remark as remark,complaintremark.status as sstatus,complaintremark.remarkDate as rdate from complaintremark join tblcomplaints on tblcomplaints.complaintNumber=complaintremark.complaintNumber where complaintremark.complaintNumber='".$_GET['cid']."'");
